@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="UserControl_Limite"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp_IHM"
+             mc:Ignorable="d" 
+             d:DesignHeight="45" d:DesignWidth="500" Background="White" >
+    <StackPanel Orientation="Vertical">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0">Select Type Limite :</TextBlock>
+            <ComboBox Name="ComboBox_TypeLimite"  Grid.Column="1" SelectionChanged="ComboBox_TypeLimite_SelectionChanged">
+                <ComboBoxItem>Manuel</ComboBoxItem>
+                <ComboBoxItem>Auto</ComboBoxItem>
+            </ComboBox>
+            <TextBox Name="TextBox_valueLimiteManual"  Grid.Column="2" TextChanged="TextBox_valueLimiteManual_TextChanged" PreviewTextInput="TextBox_valueLimiteManual_PreviewTextInput">4,0</TextBox>
+            <TextBlock Grid.Column="3">Select Rmax :</TextBlock>
+            <TextBox Name="TextBox_valueRmax"  Grid.Column="4" TextChanged="TextBox_valueRmax_TextChanged"  PreviewTextInput="TextBox_valueRmax_PreviewTextInput">4,0</TextBox>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0">Number of Points :</TextBlock>
+            <ComboBox Name="ComboBox_NbpointsLimite"  Grid.Column="1" SelectionChanged="ComboBox_NbpointsLimite_SelectionChanged" />
+            <TextBlock Grid.Column="2">Select Rmax :</TextBlock>
+            <TextBlock Name="TextBlock_Step"  Grid.Column="4">0.01</TextBlock>
+        </Grid>
+
+    </StackPanel>
+</UserControl>
