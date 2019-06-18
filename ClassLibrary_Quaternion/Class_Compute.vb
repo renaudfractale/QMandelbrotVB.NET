@@ -4,37 +4,27 @@
         Me.Simulation = Simulation
     End Sub
     Public Sub Compute()
-        Dim Amin As Integer
-        Dim Amax As Integer
-        Dim Bmin As Integer
-        Dim Bmax As Integer
-        Dim Cmin As Integer
-        Dim Cmax As Integer
-
+        Dim AStart As Double
+        Dim BStart As Double
+        Dim CStart As Double
 
 
         If Simulation.Type >= 5 Then
-            Amin = Simulation.StartB
-            Amax = Simulation.EndB
+            AStart = 0.0
         Else
-            Amin = Simulation.StartA
-            Amax = Simulation.EndA
+            AStart = -Simulation.Limite
         End If
 
         If Simulation.Type <= 2 Or Simulation.Type >= 7 Then
-            Bmin = Simulation.StartB
-            Bmax = Simulation.EndB
+            BStart = 0.0
         Else
-            Bmin = Simulation.StartA
-            Bmax = Simulation.EndA
+            BStart = -Simulation.Limite
         End If
 
         If Simulation.Type Mod 2 = 1 Then
-            Cmin = Simulation.StartB
-            Cmax = Simulation.EndB
+            CStart = 0.0
         Else
-            Cmin = Simulation.StartA
-            Cmax = Simulation.EndA
+            CStart = -Simulation.Limite
         End If
 
         Dim Wmin As Integer
@@ -57,48 +47,48 @@
             WStart = Simulation.ValeurFixe
 
             'Pour le reste
-            Xmin = Amin
-            Ymin = Bmin
-            Zmin = Cmin
-            Xmax = Amax
-            Ymax = Bmax
-            Zmax = Cmax
+            Xmin = 0
+            Ymin = 0
+            Zmin = 0
+            Xmax = Simulation.NbPoint - 1
+            Ymax = Simulation.NbPoint - 1
+            Zmax = Simulation.NbPoint - 1
 
-            XStart = -Simulation.Limite / 2
-            YStart = -Simulation.Limite / 2
-            ZStart = -Simulation.Limite / 2
+            XStart = AStart
+            YStart = BStart
+            ZStart = CStart
         ElseIf Simulation.AxeFixe = Quaternion.QAxe.X Then
             Xmin = 0
             Xmax = 0
             XStart = Simulation.ValeurFixe
 
             'Pour le reste
-            Wmin = Amin
-            Ymin = Bmin
-            Zmin = Cmin
-            Wmax = Amax
-            Ymax = Bmax
-            Zmax = Cmax
+            Wmin = 0
+            Ymin = 0
+            Zmin = 0
+            Wmax = Simulation.NbPoint - 1
+            Ymax = Simulation.NbPoint - 1
+            Zmax = Simulation.NbPoint - 1
 
-            WStart = -Simulation.Limite / 2
-            YStart = -Simulation.Limite / 2
-            ZStart = -Simulation.Limite / 2
+            WStart = AStart
+            YStart = BStart
+            ZStart = CStart
         ElseIf Simulation.AxeFixe = Quaternion.QAxe.Y Then
             Ymin = 0
             Ymax = 0
             YStart = Simulation.ValeurFixe
 
             'Pour le reste
-            Wmin = Amin
-            Xmin = Bmin
-            Zmin = Cmin
-            Wmax = Amax
-            Xmax = Bmax
-            Zmax = Cmax
+            Wmin = 0
+            Xmin = 0
+            Zmin = 0
+            Wmax = Simulation.NbPoint - 1
+            Xmax = Simulation.NbPoint - 1
+            Zmax = Simulation.NbPoint - 1
 
-            WStart = -Simulation.Limite / 2
-            XStart = -Simulation.Limite / 2
-            ZStart = -Simulation.Limite / 2
+            WStart = AStart
+            XStart = BStart
+            ZStart = CStart
 
         ElseIf Simulation.AxeFixe = Quaternion.QAxe.Z Then
             Zmin = 0
@@ -106,16 +96,16 @@
             ZStart = Simulation.ValeurFixe
 
             'Pour le reste
-            Wmin = Amin
-            Xmin = Bmin
-            Ymin = Cmin
-            Wmax = Amax
-            Xmax = Bmax
-            Ymax = Cmax
+            Wmin = 0
+            Xmin = 0
+            Ymin = 0
+            Wmax = Simulation.NbPoint - 1
+            Xmax = Simulation.NbPoint - 1
+            Ymax = Simulation.NbPoint - 1
 
-            WStart = -Simulation.Limite / 2
-            XStart = -Simulation.Limite / 2
-            YStart = -Simulation.Limite / 2
+            WStart = AStart
+            XStart = BStart
+            YStart = CStart
         Else
             Throw New System.Exception("Simulation.AxeFixe have not valide value")
         End If
@@ -127,7 +117,7 @@
         Dim Zvalue As Double
 
         Dim NbBoucle As Integer = 0
-        Dim NbAvancement As Double = 0
+        Dim NbAvancement As Double = 0.0
         For W As Integer = Wmin To Wmax
             Wvalue = WStart + (CDbl(W) / CDbl(Simulation.NbPoint - 1)) * Simulation.Limite
             If Simulation.AxeFixe <> Quaternion.QAxe.W Then

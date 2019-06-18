@@ -16,13 +16,13 @@ Public Class Class_Simulation
 
     End Sub
 
-    Public Sub New(NbPoint As Integer, Limite As Double, Type As Integer, AxeFixe As Quaternion.QAxe, ValeurFixe As Double, Optional NoBoucle As Integer = -1)
-        Me.NbPoint = NbPoint
-        Me.Limite = Limite
+    Public Sub New(Parameters As Class_Parameters, Type As Integer, Optional NoBoucle As Integer = -1)
+        Me.NbPoint = Parameters.Limite.NbPoint
+        Me.Limite = Parameters.Limite.Value
         Me.Type = Type
         Me.NoBoucle = NoBoucle
-        Me.AxeFixe = AxeFixe
-        Me.ValeurFixe = ValeurFixe
+        Me.AxeFixe = Parameters.AxeFixe.Axe
+        Me.ValeurFixe = Parameters.AxeFixe.Value
         Me.Avancement = 0.0
 
 

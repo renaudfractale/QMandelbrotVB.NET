@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Class_ArrayByte.vb" />
     <Compile Include="Class_ControlRoom.vb" />
+    <Compile Include="Path\Class_ListePath.vb" />
     <Compile Include="Class_SerialisationAndUnSerialisation.vb" />
     <Compile Include="Class_Simulation.vb" />
     <Compile Include="Class_QMandelbrod.vb" />
@@ -94,6 +95,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Parameters\Class_AxeFixe.vb" />
+    <Compile Include="Parameters\Class_Limite.vb" />
+    <Compile Include="Parameters\Class_Parameters.vb" />
+    <Compile Include="Project\Class_Project.vb" />
+    <Compile Include="Project\Class_Projects.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -115,5 +121,6 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

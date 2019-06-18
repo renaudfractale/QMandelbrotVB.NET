@@ -72,8 +72,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Lib\Class_Project.vb" />
-    <Compile Include="Lib\Class_Projects.vb" />
     <Compile Include="UserControl_AxeFixe.xaml.vb">
       <DependentUpon>UserControl_AxeFixe.xaml</DependentUpon>
     </Compile>
@@ -160,6 +158,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Lib\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

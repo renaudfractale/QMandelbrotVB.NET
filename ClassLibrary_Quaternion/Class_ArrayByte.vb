@@ -19,7 +19,7 @@ Public Class Class_ArrayByte
         Next
         'ClearMemory()
 
-        _memStream = New MemoryStream(_lenght)
+        _memStream = New MemoryStream(_lenght + 1)
         _memStream.Position = _memStream.Capacity - 1
         _memStream.WriteByte(CByte(1))
     End Sub

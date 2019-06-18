@@ -60,7 +60,7 @@
                 <TextBlock Name="TextBlock_Completation" Grid.Column="3"> 50 %</TextBlock>
             </Grid>
         </Border>
-        <Button Name="Button_Run"> Run</Button>
+        <Button Name="Button_Generate" Click="Button_Generate_Click"> Generate</Button>
         
     </StackPanel>
 </Window>

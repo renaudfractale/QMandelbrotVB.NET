@@ -1,27 +1,29 @@
 ﻿Imports System.IO
 Imports ClassLibrary_Quaternion
 Class MainWindow
-    Property PathMyDocuments As String
-    Property PathMyProjects As String
+    Private ListePath As Class_ListePath
+
+
     Property Project As Class_Project
     Property Projects As New Class_Projects
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        PathMyDocuments = My.Computer.FileSystem.SpecialDirectories.MyDocuments + "\" + "QMandelbrod"
-        If Not Directory.Exists(PathMyDocuments) Then
-            Directory.CreateDirectory(PathMyDocuments)
-        End If
+        Me.ListePath = New Class_ListePath
 
-        TextBox_PathMain.Text = PathMyDocuments
+        If Not Directory.Exists(Class_ListePath.PathMyDocument) Then
+            Directory.CreateDirectory(Class_ListePath.PathMyDocument)
+        End If
+        Class_ListePath.PathMyDocument = Class_ListePath.PathMyDocument
+        TextBox_PathMain.Text = Class_ListePath.PathMyDocument
         TextBox_PathMain.IsReadOnly = True
 
-        PathMyProjects = PathMyDocuments + "\Projects.json"
 
-        If File.Exists(PathMyProjects) Then
-            Projects = Class_SerialisationAndUnSerialisation.UnSerialisation(Of Class_Projects)(PathMyProjects)
+
+        If File.Exists(Class_ListePath.PathMyProjects) Then
+            Projects = Class_SerialisationAndUnSerialisation.UnSerialisation(Of Class_Projects)(Class_ListePath.PathMyProjects)
         Else
             Projects = New Class_Projects
             Projects.Add()
-            Class_SerialisationAndUnSerialisation.Serialisation(Of Class_Projects)(Projects, PathMyProjects)
+            Class_SerialisationAndUnSerialisation.Serialisation(Of Class_Projects)(Projects, Class_ListePath.PathMyProjects)
         End If
 
         ComboBox_ListeProjectUpdate()
@@ -65,6 +67,7 @@ Class MainWindow
         UCtrl_Limite.ComboBox_TypeLimite.SelectedIndex = Project.LimiteType
         UCtrl_Limite.ComboBox_NbpointsLimite.SelectedItem = Project.NbPointLimite.ToString
         UCtrl_Limite.TextBox_valueRmax.Text = Project.Rmax.ToString
+        UCtrl_Limite.TextBox_valuePower.Text = Project.Power.ToString
 
         ComboBox_ListeProject.IsEnabled = False
     End Sub
@@ -95,7 +98,7 @@ Class MainWindow
 
         Project.NbPointLimite = CInt(UCtrl_Limite.ComboBox_NbpointsLimite.SelectedItem.ToString)
         Project.Rmax = CDbl(UCtrl_Limite.TextBox_valueRmax.Text)
-
+        Project.Power = CDbl(UCtrl_Limite.TextBox_valuePower.Text)
         Return Project
     End Function
     Private Sub Button_Edit_Click(sender As Object, e As RoutedEventArgs)
@@ -123,6 +126,8 @@ Class MainWindow
         ComboBox_ListeProjectUpdate()
         ComboBox_ListeProject.SelectedIndex = Projects.Count - 1
         ComboBox_ListeProject.IsEnabled = False
+        'ProjectSaved.GenerateControlsRooms()
+        Class_SerialisationAndUnSerialisation.Serialisation(Of Class_Projects)(Projects, Class_ListePath.PathMyProjects)
     End Sub
 
     Private Sub Button_Save_Click(sender As Object, e As RoutedEventArgs)
@@ -133,12 +138,16 @@ Class MainWindow
                 ComboBox_ListeProject.IsEnabled = True
                 IsDisplayEdit(True)
                 ComboBox_ListeProjectUpdate()
+                ' ProjectSaved.GenerateControlsRooms()
+                Class_SerialisationAndUnSerialisation.Serialisation(Of Class_Projects)(Projects, Class_ListePath.PathMyProjects)
             End If
         Else
             Projects.Item(ProjectSaved.ID_Project) = ProjectSaved
             ComboBox_ListeProject.IsEnabled = True
             IsDisplayEdit(True)
             ComboBox_ListeProjectUpdate()
+            ' ProjectSaved.GenerateControlsRooms()
+            Class_SerialisationAndUnSerialisation.Serialisation(Of Class_Projects)(Projects, Class_ListePath.PathMyProjects)
         End If
     End Sub
 
@@ -149,14 +158,14 @@ Class MainWindow
             Border_Button.Visibility = Visibility.Collapsed
             Border_Tilte.Visibility = Visibility.Collapsed
             Border_Statut.Visibility = Visibility.Collapsed
-            Button_Run.Visibility = Visibility.Collapsed
+            Button_Generate.Visibility = Visibility.Visible
         Else
             Border_AxeFixe.Visibility = Visibility.Visible
             Border_Limite.Visibility = Visibility.Visible
             Border_Button.Visibility = Visibility.Visible
             Border_Tilte.Visibility = Visibility.Visible
-            Border_Statut.Visibility = Visibility.Visible
-            Button_Run.Visibility = Visibility.Visible
+            Border_Statut.Visibility = Visibility.Collapsed
+            Button_Generate.Visibility = Visibility.Collapsed
         End If
     End Sub
 
@@ -167,5 +176,12 @@ Class MainWindow
             ComboBox_ListeProject.Items.Add(KV.Key.ToString + "| " + KV.Value.Name_Project)
         Next
         ComboBox_ListeProject.SelectedIndex = 0
+    End Sub
+
+    Private Sub Button_Generate_Click(sender As Object, e As RoutedEventArgs)
+        If ComboBox_ListeProject.SelectedItem IsNot Nothing Then
+            Dim NoIndex As Integer = ComboBox_ListeProject.SelectedItem.ToString.Split("|"c)(0)
+            Projects.Item(NoIndex).GenerateControlsRooms()
+        End If
     End Sub
 End Class

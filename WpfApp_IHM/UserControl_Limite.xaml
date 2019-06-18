@@ -9,10 +9,12 @@
     <StackPanel Orientation="Vertical">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0">Select Type Limite :</TextBlock>
@@ -21,8 +23,10 @@
                 <ComboBoxItem>Auto</ComboBoxItem>
             </ComboBox>
             <TextBox Name="TextBox_valueLimiteManual"  Grid.Column="2" TextChanged="TextBox_valueLimiteManual_TextChanged" PreviewTextInput="TextBox_valueLimiteManual_PreviewTextInput">4,0</TextBox>
-            <TextBlock Grid.Column="3">Select Rmax :</TextBlock>
+            <TextBlock Grid.Column="3">Rmax :</TextBlock>
             <TextBox Name="TextBox_valueRmax"  Grid.Column="4" TextChanged="TextBox_valueRmax_TextChanged"  PreviewTextInput="TextBox_valueRmax_PreviewTextInput">4,0</TextBox>
+            <TextBlock Grid.Column="5">Power :</TextBlock>
+            <TextBox Name="TextBox_valuePower"  Grid.Column="6" TextChanged="TextBox_valuePower_TextChanged"  PreviewTextInput="TextBox_valuePower_PreviewTextInput">2,0</TextBox>
         </Grid>
         <Grid>
             <Grid.ColumnDefinitions>

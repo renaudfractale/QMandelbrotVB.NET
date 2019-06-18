@@ -1,0 +1,17 @@
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\bin\Release\QMandelbrot_WorkerManager.exe.config
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\bin\Release\QMandelbrot_WorkerManager.exe
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\bin\Release\QMandelbrot_WorkerManager.pdb
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\bin\Release\QMandelbrot_WorkerManager.xml
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\bin\Release\ClassLibrary_Quaternion.dll
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\bin\Release\Newtonsoft.Json.dll
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\bin\Release\ClassLibrary_Quaternion.pdb
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\bin\Release\ClassLibrary_Quaternion.xml
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\bin\Release\Newtonsoft.Json.xml
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\obj\Release\QMandelbrot_WorkerManager.vbprojAssemblyReference.cache
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\obj\Release\QMandelbrot_WorkerManager.Resources.resources
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\obj\Release\QMandelbrot_WorkerManager.vbproj.GenerateResource.cache
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\obj\Release\QMandelbrot_WorkerManager.vbproj.CoreCompileInputs.cache
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\obj\Release\QMandelbrot_WorkerManager.vbproj.CopyComplete
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\obj\Release\QMandelbrot_WorkerManager.exe
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\obj\Release\QMandelbrot_WorkerManager.xml
+D:\WebSite\Quaternion\QuaternionV1\QMandelbrot_WorkerManager\obj\Release\QMandelbrot_WorkerManager.pdb

@@ -1,6 +1,8 @@
 ﻿Public Class UserControl_Limite
-    Property OldvalueLimite As String = ""
-    Property OldvalueRmax As String = ""
+    Property OldvalueLimite As String = "4"
+    Property OldvalueRmax As String = "4"
+    Property OldvaluePwer As String = "2"
+
     Public Sub New()
 
         ' Cet appel est requis par le concepteur.
@@ -84,5 +86,17 @@
 
     Private Sub TextBox_valueRmax_PreviewTextInput(sender As Object, e As TextCompositionEventArgs)
         OldvalueRmax = TextBox_valueRmax.Text
+    End Sub
+
+    Private Sub TextBox_valuePower_PreviewTextInput(sender As Object, e As TextCompositionEventArgs)
+        OldvaluePwer = TextBox_valuePower.Text
+    End Sub
+
+    Private Sub TextBox_valuePower_TextChanged(sender As Object, e As TextChangedEventArgs)
+        Try
+            Dim DD = CDbl(TextBox_valuePower.Text)
+        Catch ex As Exception
+            TextBox_valuePower.Text = OldvaluePwer
+        End Try
     End Sub
 End Class
