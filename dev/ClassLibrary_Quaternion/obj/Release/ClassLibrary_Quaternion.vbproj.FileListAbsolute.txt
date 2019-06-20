@@ -1,0 +1,12 @@
+D:\WebSite\Quaternion\QuaternionV1\ClassLibrary_Quaternion\bin\Release\ClassLibrary_Quaternion.dll
+D:\WebSite\Quaternion\QuaternionV1\ClassLibrary_Quaternion\bin\Release\ClassLibrary_Quaternion.pdb
+D:\WebSite\Quaternion\QuaternionV1\ClassLibrary_Quaternion\bin\Release\ClassLibrary_Quaternion.xml
+D:\WebSite\Quaternion\QuaternionV1\ClassLibrary_Quaternion\bin\Release\Newtonsoft.Json.dll
+D:\WebSite\Quaternion\QuaternionV1\ClassLibrary_Quaternion\bin\Release\Newtonsoft.Json.xml
+D:\WebSite\Quaternion\QuaternionV1\ClassLibrary_Quaternion\obj\Release\ClassLibrary_Quaternion.Resources.resources
+D:\WebSite\Quaternion\QuaternionV1\ClassLibrary_Quaternion\obj\Release\ClassLibrary_Quaternion.vbproj.GenerateResource.cache
+D:\WebSite\Quaternion\QuaternionV1\ClassLibrary_Quaternion\obj\Release\ClassLibrary_Quaternion.vbproj.CoreCompileInputs.cache
+D:\WebSite\Quaternion\QuaternionV1\ClassLibrary_Quaternion\obj\Release\ClassLibrary_Quaternion.vbproj.CopyComplete
+D:\WebSite\Quaternion\QuaternionV1\ClassLibrary_Quaternion\obj\Release\ClassLibrary_Quaternion.dll
+D:\WebSite\Quaternion\QuaternionV1\ClassLibrary_Quaternion\obj\Release\ClassLibrary_Quaternion.xml
+D:\WebSite\Quaternion\QuaternionV1\ClassLibrary_Quaternion\obj\Release\ClassLibrary_Quaternion.pdb
