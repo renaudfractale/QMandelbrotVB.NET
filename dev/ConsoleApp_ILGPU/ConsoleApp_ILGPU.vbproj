@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{379E3DD2-E21D-4B5F-9A6C-1531F3004357}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>ConsoleApp_ILGPU.Module1</StartupObject>
+    <StartupObject>ConsoleApp_ILGPU.Module_Main</StartupObject>
     <RootNamespace>ConsoleApp_ILGPU</RootNamespace>
     <AssemblyName>ConsoleApp_ILGPU</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -103,12 +103,16 @@
     <Reference Include="ILGPU, Version=0.5.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ILGPU.0.5.1\lib\net47\Release\ILGPU.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reflection.Metadata.1.6.0\lib\netstandard2.0\System.Reflection.Metadata.dll</HintPath>
@@ -134,8 +138,21 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class_Compute.vb" />
-    <Compile Include="Module1.vb" />
+    <Compile Include="Kernel\Class_Compute3DMandelbrot.vb" />
+    <Compile Include="Kernel\Class_Compute2DJulia.vb" />
+    <Compile Include="Lib\Class_BOX.vb" />
+    <Compile Include="Kernel\Class_Compute2DMandelbrot.vb" />
+    <Compile Include="Kernel\Class_Compute3DJulia.vb" />
+    <Compile Include="Lib\Class_ColorMap.vb" />
+    <Compile Include="Lib\Class_SerialisationAndUnSerialisation.vb" />
+    <Compile Include="Lib\Class_Double.vb" />
+    <Compile Include="Lib\Class_Histo.vb" />
+    <Compile Include="Modules\Module_2DMandelbrot.vb" />
+    <Compile Include="Modules\Module_2DJulia.vb" />
+    <Compile Include="Modules\Module_3DMandelbrot.vb" />
+    <Compile Include="Modules\Module_3DJulia.vb" />
+    <Compile Include="Modules\Module_Path.vb" />
+    <Compile Include="Module_Main.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

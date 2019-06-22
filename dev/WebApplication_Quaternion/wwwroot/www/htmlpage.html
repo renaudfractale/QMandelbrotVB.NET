@@ -1,0 +1,101 @@
+﻿<html>
+<head>
+    <title>My first three.js app</title>
+</head>
+<body>
+  
+	<script src="js/jdataview.js"></script>
+	<script src="js/jbinary.js"></script>
+	
+	    <script>
+var oReq = new XMLHttpRequest();
+oReq.open("GET", "./raw.bin", true);
+oReq.responseType = "arraybuffer";
+
+oReq.onload = function (oEvent) {
+  var arrayBuffer = oReq.response; // Note: not oReq.responseText
+  if (arrayBuffer) {
+    var byteArray = new Uint8Array(arrayBuffer);
+    for (var i = 0; i < byteArray.byteLength; i++) {
+      // do something with each byte in the array
+        var DIV = document.getElementById("DIV")
+        var Child = document.createElement("h1")
+        Child.innerHTML = byteArray[i]
+        DIV.appendChild(Child)
+    }
+  }
+};
+
+            oReq.send(null);
+
+
+var req = new XMLHttpRequest();
+ req.responseType = 'json';
+            req.open('GET', "./Box.json", true);
+            var jsonResponse = null
+req.onload  = function() {
+   jsonResponse  = req.response;
+   // do something with jsonResponse
+};
+            req.send(null);
+
+
+            var req1 = new XMLHttpRequest();
+ req1.responseType = 'text';
+            req1.open('GET', "./Constante.txt", true);
+            var ConstanteTxt = null
+            var Constante
+req1.onload  = function() {
+   ConstanteTxt  = req1.response;
+   Constante = parseFloat(ConstanteTxt.replace(",","."))
+};
+            
+ 
+req1.send(null);
+
+                        var req2 = new XMLHttpRequest();
+ req2.responseType = 'text';
+            req2.open('GET', "./NPpoint.txt", true);
+            var NPPointTxt = null
+            var NPPoint= 0
+req2.onload  = function() {
+   NPPointTxt  = req2.response;
+  NPPoint = parseInt(NPPointTxt)
+};
+          
+ 
+  req2.send(null);
+		</script>
+	
+	<div id="DIV"></div>
+	
+	<!--
+	  <script src="js/three.js"></script>
+    <script>
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			var cube = new THREE.Mesh( geometry, material );
+			scene.add( cube );
+
+			camera.position.z = 5;
+
+			var animate = function () {
+				requestAnimationFrame( animate );
+
+				cube.rotation.x += 0.01;
+				cube.rotation.y += 0.01;
+
+				renderer.render( scene, camera );
+			};
+
+			animate();
+    </script> -->
+</body>
+</html>

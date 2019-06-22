@@ -18,3 +18,5 @@ D:\WebSite\Quaternion\QuaternionV1\ConsoleApp_ILGPU\obj\x64\Release\ConsoleApp_I
 D:\WebSite\Quaternion\QuaternionV1\ConsoleApp_ILGPU\obj\x64\Release\ConsoleApp_ILGPU.exe
 D:\WebSite\Quaternion\QuaternionV1\ConsoleApp_ILGPU\obj\x64\Release\ConsoleApp_ILGPU.xml
 D:\WebSite\Quaternion\QuaternionV1\ConsoleApp_ILGPU\obj\x64\Release\ConsoleApp_ILGPU.pdb
+D:\WebSite\Quaternion\QuaternionV1\ConsoleApp_ILGPU\bin\x64\Release\Newtonsoft.Json.dll
+D:\WebSite\Quaternion\QuaternionV1\ConsoleApp_ILGPU\bin\x64\Release\Newtonsoft.Json.xml

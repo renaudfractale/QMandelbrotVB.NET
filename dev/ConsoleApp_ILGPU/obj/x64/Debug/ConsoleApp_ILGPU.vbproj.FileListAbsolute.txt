@@ -18,3 +18,5 @@ D:\WebSite\Quaternion\QuaternionV1\ConsoleApp_ILGPU\obj\x64\Debug\ConsoleApp_ILG
 D:\WebSite\Quaternion\QuaternionV1\ConsoleApp_ILGPU\obj\x64\Debug\ConsoleApp_ILGPU.xml
 D:\WebSite\Quaternion\QuaternionV1\ConsoleApp_ILGPU\obj\x64\Debug\ConsoleApp_ILGPU.pdb
 D:\WebSite\Quaternion\QuaternionV1\ConsoleApp_ILGPU\obj\x64\Debug\ConsoleApp_ILGPU.vbprojAssemblyReference.cache
+D:\WebSite\Quaternion\QuaternionV1\ConsoleApp_ILGPU\bin\x64\Debug\Newtonsoft.Json.dll
+D:\WebSite\Quaternion\QuaternionV1\ConsoleApp_ILGPU\bin\x64\Debug\Newtonsoft.Json.xml
